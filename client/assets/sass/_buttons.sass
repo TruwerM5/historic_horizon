@@ -1,0 +1,73 @@
+.primary-button
+    width: fit-content
+    padding: 10px 35px
+    margin: 0 auto
+    background-color: #1257e0
+    color: #fff
+    transition: background-color .4s
+    font-family: Roboto
+    &:hover
+        background-color: #6596f7
+    @media screen and (min-width: 768px)
+        font-size: 20px
+
+
+.overlay-close-button
+    position: absolute
+    right: 30px
+    top: 30px
+    width: 30px
+    height: 30px
+    &__line
+        position: absolute
+        left: 0
+        width: 100%
+        height: 2px
+        transform-origin: center center
+        background-color: #333
+        &.dark
+            background-color: #fff
+        &_1
+            transform: rotate(45deg) translateY(-50%)
+            top: 50%
+        &_2
+            transform: rotate(-45deg) translateY(50%)
+            bottom: 50%
+
+
+.danger-button
+    background-color: #ff3333
+    font-family: Roboto
+    color: #fff
+    padding: 5px 20px
+    transition: background-color .2s
+    &:hover
+        background-color: #ff9999
+
+
+.yellow-button
+    background-color: #e09a11
+    font-family: Roboto
+    color: #fff
+    padding: 5px 20px
+    transition: background-color .2s
+    &:hover
+        background-color: #fac866
+
+.neutral-button
+    background-color: #333
+    color: #f3f3f3
+    font-family: Roboto
+    padding: 5px 15px
+    transition: background-color .2s
+    &:hover
+        background-color: #666
+
+.green-button
+    background-color: #18d63e
+    color: #f3f3f3
+    font-family: Roboto
+    padding: 5px 15px
+    transition: background-color .2s
+    &:hover
+        background-color: #5aed78

@@ -1,0 +1,49 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node ./.output/server/index.mjs",
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "cy:open": "cypress open",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "lint": "eslint",
+    "test:browser": "vitest"
+  },
+  "dependencies": {
+    "@nuxtjs/i18n": "^8.0.0",
+    "@pinia/nuxt": "^0.5.1",
+    "axios": "^1.7.3",
+    "marked": "^13.0.2",
+    "nuxt": "^3.12.3",
+    "pinia": "^2.1.7",
+    "vue": "latest"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.8.0",
+    "@testing-library/vue": "^8.1.0",
+    "@vitejs/plugin-vue": "^5.1.2",
+    "@vitest/browser": "^2.0.5",
+    "@vitest/coverage-v8": "^2.0.5",
+    "autoprefixer": "^10.4.19",
+    "cypress": "^13.13.2",
+    "eslint": "^9.8.0",
+    "eslint-plugin-vue": "^9.27.0",
+    "globals": "^15.9.0",
+    "playwright": "^1.46.0",
+    "postcss": "^8.4.39",
+    "prettier": "3.3.3",
+    "sass": "^1.77.6",
+    "tailwindcss": "^3.4.4",
+    "typescript-eslint": "^8.0.0",
+    "vitest": "^2.0.5"
+  },
+  "overrides": {
+    "eslint": "^9.8.0"
+  }
+}

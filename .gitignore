@@ -1,0 +1,13 @@
+/client/node_modules
+/server/node_modules
+/.output
+/client/cypress
+/tests
+/client/vitest-example
+/client/.gitignore
+.env
+Dockerfile
+docker-compose.yml
+/server/dist
+article.md
+README.md

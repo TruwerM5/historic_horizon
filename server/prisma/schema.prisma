@@ -1,0 +1,97 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// model Admin {
+//   id Int @default(autoincrement()) @id
+//   login String
+//   password String
+
+//   @@map("admins")
+// }
+
+// model Author {
+//   id Int @default(autoincrement()) @id
+//   login String
+//   password String
+//   articles Article[]
+//   status Status @default(ACTIVE)
+//   block BlockedUser?
+
+//   @@map("authors")
+// }
+
+
+model User {
+  id Int @default(autoincrement()) @id
+  username String
+  email String @unique
+  password String
+  role Role @default(USER)
+  articles Article[]
+  status Status @default(ACTIVE)
+  likes Like[]
+  @@map("users")
+}
+
+model Article {
+  id String @id @default(uuid())
+  title String
+  banner String?
+  pub_date DateTime
+  tags String[]
+
+  articleContent ArticleContent?
+
+  author_id Int
+  author User @relation(fields: [author_id], references: [id])
+
+  likes Like[]
+
+  @@map("articles")
+
+}
+
+
+model ArticleContent {
+  id Int @default(autoincrement()) @id
+  content String
+  article_id String @unique @default(uuid())
+  article Article @relation(fields: [article_id], references: [id])
+
+  @@map("articles_content")
+  
+}
+
+model Like {
+  id Int @default(autoincrement()) @id
+  user User @relation(fields: [user_id], references: [id])
+  user_id Int @unique
+  article Article @relation(fields: [article_id], references: [id])
+  article_id String @unique @default(uuid())
+
+  @@map("likes")
+}
+
+enum Status {
+  ACTIVE
+  INACTIVE
+  BLOCKED
+}
+
+enum Role {
+  ADMIN
+  AUTHOR
+  USER
+}
