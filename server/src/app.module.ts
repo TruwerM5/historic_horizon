@@ -13,7 +13,8 @@ import { ConfigModule } from '@nestjs/config';
     AuthModule, 
     UsersModule, 
     ConfigModule.forRoot({
-      isGlobal: true
+      isGlobal: true,
+      envFilePath: '.env'
     })
   ],
   controllers: [AppController],
