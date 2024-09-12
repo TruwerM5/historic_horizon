@@ -1,7 +1,7 @@
 import axios from "axios";
 import { apiBase } from "~/constants";
 import type Article from "~/types/article";
-const baseUrl = "http://localhost:3001/api/articles";
+const baseUrl = "http://89.111.173.105:3001/api/articles";
 
 export async function fetchArticleById(
   id: string | string[],
